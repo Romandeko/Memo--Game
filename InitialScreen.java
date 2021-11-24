@@ -47,9 +47,6 @@ public class InitialScreen {
         // Add Rule Button
         addRuleButton(panelAll);
 
-        // Add Difficulty Level Button
-        addDiffLevelButton(panelAll);
-
         // Add Time Info Level Button
         addTimeButton(panelAll);
 
@@ -106,51 +103,6 @@ public class InitialScreen {
         });
 
         panel.add(rulesPanel);
-
-    }
-
-
-    // This is a method to add Difficulty Level Button.
-    private void addDiffLevelButton(JPanel panel) {
-
-        // create and initialize panel with 1 rows 4 columns format.
-        diffPanel.setLayout(new GridLayout(1, 4, 5, 5));
-
-        // add buttons for panel.
-        JRadioButton button1 = new JRadioButton("Easy");
-        JRadioButton button2 = new JRadioButton("Medium");
-        JRadioButton button3 = new JRadioButton("Difficult");
-
-        // create 3 buttons.
-        ButtonGroup group = new ButtonGroup();
-        group.add(button1);
-        group.add(button2);
-        group.add(button3);
-
-        JLabel radioLabel = new JLabel("Difficulty Level");
-
-        button1.setHorizontalAlignment(SwingConstants.CENTER);
-        button2.setHorizontalAlignment(SwingConstants.CENTER);
-        button3.setHorizontalAlignment(SwingConstants.CENTER);
-        radioLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-
-        diffPanel.add(radioLabel);
-        diffPanel.add(button1);
-        diffPanel.add(button2);
-        diffPanel.add(button3);
-
-        // add final panel into the given panel.
-        panel.add(diffPanel);
-
-
-        // In addition to that we need to add action listeners for this button
-        // This button information will determine difficulty level of the game.
-
-        // Add actions to the whole button..!
-        button1.addActionListener(this::actionPerformedDiffLevelButton);
-        button2.addActionListener(this::actionPerformedDiffLevelButton);
-        button3.addActionListener(this::actionPerformedDiffLevelButton);
-
 
     }
 
@@ -598,20 +550,13 @@ public class InitialScreen {
         AbstractButton aButton = (AbstractButton) e.getSource();
         System.out.println("Selected: " + aButton.getText());
 
-        switch (aButton.getText()) {
-            case "Easy":
-                gameParams.setDiffLevel(500);
-                break;
-            case "Medium":
-                gameParams.setDiffLevel(1000);
-                break;
-            case "Difficult":
-                gameParams.setDiffLevel(2000);
-                break;
-        }
-
 
     }
 
 
 }
+
+
+
+
+
