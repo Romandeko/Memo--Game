@@ -50,7 +50,7 @@ public class Cards extends JButton {
 
             changeParameters(scores[0], time, names.get(0));
 
-      
+        // if it is multiple player.
         } else {
 
             changeParametersMultiPlayer(scores[0], scores[1],  names.get(0), names.get(1));
